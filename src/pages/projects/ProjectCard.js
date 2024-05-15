@@ -130,12 +130,12 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
             <b style={{ fontSize: "1em" }} className="customheading2">
               {name}
             </b>
-          ) || <Skeleton />}{" "}
+          ) || <Skeleton />}
         </Card.Title>
         <Card.Text>
           <b
             style={{
-              height: "150px",
+              height: "180px",
               display: "block",
               textAlign: "justify",
             }}
