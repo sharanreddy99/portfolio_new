@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Button, ModalHeader } from "react-bootstrap";
+import { Modal, ModalHeader } from "react-bootstrap";
 import "./ResumeModal.css";
 
 const ResumeModal = ({ show, setShow, resumeLink }) => {
