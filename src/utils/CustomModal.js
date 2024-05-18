@@ -20,7 +20,7 @@ const CustomModal = ({
         <Button
           variant="success"
           onClick={() => {
-            window.location.reload();
+            window.location.replace("/?page=projects");
           }}
         >
           <b>Refresh</b>

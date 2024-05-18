@@ -510,6 +510,8 @@ const projectCredentials = {
   polls_viewer: "<b> No credentials are required for this application. </b>",
   walmart_order_parser:
     "<b> No credentials are required for this application. </b>",
+  airline_analysis:
+    "<b> No credentials are required for this application. </b>",
   dbms_algos: "<b> Password: sharanreddy </b>",
 };
 
