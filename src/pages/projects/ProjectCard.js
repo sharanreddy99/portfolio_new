@@ -67,7 +67,7 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
 
   const CardButtons = () => {
     return (
-      <div className=" gap-2 d-block mt-2">
+      <div className="custombuttongroup">
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -105,8 +105,7 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
 
   return (
     // <Fade bottom duration={2000} distance="40px" style={{ display: "flex" }}>
-
-    <Col sm={12} md={12} lg={6}>
+    <span>
       <CustomDangerousModal
         title={showDangerousModal.title}
         body={showDangerousModal.body}
@@ -122,8 +121,14 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
         progressPeriod={59}
       />
       <Card
-        className="card shadow-lg p-3 mb-5 rounded"
-        style={{ background: "transparent" }}
+        className="card shadow-lg p-3 rounded"
+        style={{
+          background: "transparent",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}
       >
         <Card.Title as="h5">
           {(
@@ -133,15 +138,17 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
           ) || <Skeleton />}
         </Card.Title>
         <Card.Text>
-          <b
+          <span
+            key={name}
+            className="subTitle skills-text"
             style={{
-              height: "180px",
-              display: "block",
-              textAlign: "justify",
+              fontSize: "1rem",
+              color: theme.secondaryText,
+              fontWeight: "bold",
             }}
           >
             {!description ? "" : description || <Skeleton count={3} />}{" "}
-          </b>
+          </span>
         </Card.Text>
         {svn_url ? (
           <CardButtons
@@ -171,7 +178,7 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
           <Skeleton />
         )}
       </Card>
-    </Col>
+    </span>
     // </Fade>
   );
 };
@@ -196,7 +203,7 @@ const Language = ({ data, repo_url }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="badge bg-light text-dark">
+              <span className="badge text-dark">
                 {language}:{" "}
                 {Math.trunc((data[language] / total_count) * 1000) / 10} %
               </span>
