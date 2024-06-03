@@ -75,22 +75,20 @@ const Projects = ({ theme, onToggle }) => {
         </div>
       </div>
       <div className="projects-main">
-        <Container className="cardcontainer">
-          <Row>
-            {projectsArray.length
-              ? projectsArray.map((project, index) => (
-                  <ProjectCard
-                    key={`project-card-${index}`}
-                    id={`project-card-${index}`}
-                    value={project}
-                    deployURL={repos.deployURL}
-                    hostedURL={repos.hostedURL}
-                    theme={theme}
-                  />
-                ))
-              : null}
-          </Row>
-        </Container>
+        <div className="projectcards cardcontainer">
+          {projectsArray.length
+            ? projectsArray.map((project, index) => (
+                <ProjectCard
+                  key={`project-card-${index}`}
+                  id={`project-card-${index}`}
+                  value={project}
+                  deployURL={repos.deployURL}
+                  hostedURL={repos.hostedURL}
+                  theme={theme}
+                />
+              ))
+            : null}
+        </div>
         <Button
           text={"More Projects"}
           className="project-button"

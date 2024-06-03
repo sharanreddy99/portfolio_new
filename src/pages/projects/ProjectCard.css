@@ -1,44 +1,37 @@
 .btn {
-  width: 20%;
-  padding: 1%;
+  padding: 10px;
 }
 
 .custombutton {
-  width: 90% !important;
+  width: 100% !important;
   margin-top: 5px;
 }
 
+.custombuttongroup {
+  padding: 0.25rem;
+  width: 90% !important;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 5px 30px;
+}
+
 @media (min-width: 576px) {
-  .custombutton {
-    width: 90% !important;
+  .custombuttongroup {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .custombutton {
-    width: 40% !important;
+  .custombuttongroup {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /*  Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .custombutton {
-    width: 40% !important;
-  }
-}
-
-/*  X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .custombutton {
-    width: 23% !important;
-  }
-}
-
-/*  XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-  .custombutton {
-    width: 23% !important;
+  .custombuttongroup {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
