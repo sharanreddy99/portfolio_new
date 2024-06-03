@@ -1,19 +1,29 @@
 import React from "react";
 import "./App.css";
 import Main from "./containers/Main";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { chosenTheme } from "./theme";
 import { GlobalStyles } from "./global";
+import { useTheme, ThemeProvider } from "./ThemeContext";
 
-function App() {
+function ThemedApp() {
+  const { theme, toggleTheme } = useTheme();
   return (
-    <ThemeProvider theme={chosenTheme}>
+    <StyledThemeProvider theme={theme}>
       <>
         <GlobalStyles />
         <div>
-          <Main theme={chosenTheme} />
+          <Main theme={theme} />
         </div>
       </>
+    </StyledThemeProvider>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <ThemedApp />
     </ThemeProvider>
   );
 }

@@ -8,7 +8,7 @@ import CustomDangerousModal from "../../utils/CustomDangerousModal";
 import { projectCredentials } from "../../portfolio";
 import "./ProjectCard.css";
 
-const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
+const ProjectCard = ({ id, theme, value, hostedURL, deployURL }) => {
   const {
     name,
     description,
@@ -164,12 +164,13 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
 
         <hr />
         {languages_url ? (
-          <Language data={languages} repo_url={svn_url} />
+          <Language theme={theme} data={languages} repo_url={svn_url} />
         ) : (
           <Skeleton count={3} />
         )}
         {value ? (
           <CardFooter
+            theme={theme}
             star_count={stargazers_count}
             repo_url={svn_url}
             pushed_at={pushed_at}
@@ -183,7 +184,7 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
   );
 };
 
-const Language = ({ data, repo_url }) => {
+const Language = ({ theme, data, repo_url }) => {
   const array = [];
   let total_count = 0;
   for (let index in data) {
@@ -203,7 +204,7 @@ const Language = ({ data, repo_url }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="badge text-dark">
+              <span className="badge" style={{ color: theme.secondaryText }}>
                 {language}:{" "}
                 {Math.trunc((data[language] / total_count) * 1000) / 10} %
               </span>
@@ -214,7 +215,7 @@ const Language = ({ data, repo_url }) => {
   );
 };
 
-const CardFooter = ({ star_count, repo_url, pushed_at }) => {
+const CardFooter = ({ theme, star_count, repo_url, pushed_at }) => {
   const [updated_at, setUpdated_at] = useState("0 mints");
 
   const handleUpdatetime = useCallback(() => {
@@ -247,10 +248,17 @@ const CardFooter = ({ star_count, repo_url, pushed_at }) => {
         className="text-dark text-decoration-none"
       >
         <span className="text-dark card-link mr-4">
-          <span className="badge badge-dark">{star_count}</span>
+          <span
+            className="badge badge-dark"
+            style={{ color: theme.secondaryText }}
+          >
+            {star_count}
+          </span>
         </span>
       </a>
-      <small className="text-muted">Updated {updated_at}</small>
+      <small className="text-muted" style={{ color: theme.secondaryText }}>
+        Updated {updated_at}
+      </small>
     </p>
   );
 };
