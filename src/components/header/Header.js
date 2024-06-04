@@ -4,7 +4,6 @@ import { Fade } from "react-reveal";
 import { NavLink, Link } from "react-router-dom";
 import { greeting, settings } from "../../portfolio.js";
 import SeoHeader from "../seoHeader/SeoHeader";
-import { useTheme } from "../../ThemeContext.js";
 
 const onMouseEnter = (event, color) => {
   const el = event.target;
@@ -17,7 +16,6 @@ const onMouseOut = (event) => {
 };
 
 const Header = ({ theme }) => {
-  const { toggleTheme } = useTheme();
   const link = settings.isSplash ? "/splash" : "";
   return (
     <Fade top duration={1000} distance="20px">
@@ -108,13 +106,6 @@ const Header = ({ theme }) => {
               >
                 Contact Me
               </NavLink>
-            </li>
-            <li>
-              <i
-                id="theme-toggle"
-                className="fa-solid fa-lightbulb"
-                onClick={toggleTheme}
-              ></i>
             </li>
           </ul>
         </header>

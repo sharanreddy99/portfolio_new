@@ -1,7 +1,10 @@
 import React from "react";
 import "./TopButton.css";
+import { useTheme } from "../../ThemeContext.js";
 
 export default function TopButton({ theme }) {
+  const { toggleTheme } = useTheme();
+
   function GoUpEvent() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -13,8 +16,10 @@ export default function TopButton({ theme }) {
       document.documentElement.scrollTop > 30
     ) {
       document.getElementById("topButton").style.visibility = "visible";
+      document.getElementById("changeTheme").style.visibility = "visible";
     } else {
       document.getElementById("topButton").style.visibility = "hidden";
+      document.getElementById("changeTheme").style.visibility = "hidden";
     }
   }
 
@@ -47,19 +52,36 @@ export default function TopButton({ theme }) {
   };
 
   return (
-    <div
-      onClick={GoUpEvent}
-      id="topButton"
-      style={{
-        color: theme.body,
-        backgroundColor: theme.text,
-        border: `solid 1px ${theme.text}`,
-      }}
-      title="Go up"
-      onMouseEnter={() => onMouseEnter(theme.text, theme.body)}
-      onMouseLeave={() => onMouseLeave(theme.body, theme.text)}
-    >
-      <i className="fas fa-arrow-up" id="arrow" aria-hidden="true" />
-    </div>
+    <>
+      <div
+        onClick={toggleTheme}
+        id="changeTheme"
+        style={{
+          color: theme.body,
+          backgroundColor: theme.text,
+          border: `solid 1px ${theme.text}`,
+        }}
+        title="Change Theme"
+        onMouseEnter={() => onMouseEnter(theme.text, theme.body)}
+        onMouseLeave={() => onMouseLeave(theme.body, theme.text)}
+      >
+        <i id="theme-toggle" className="fa-solid fa-lightbulb"></i>
+      </div>
+
+      <div
+        onClick={GoUpEvent}
+        id="topButton"
+        style={{
+          color: theme.body,
+          backgroundColor: theme.text,
+          border: `solid 1px ${theme.text}`,
+        }}
+        title="Go up"
+        onMouseEnter={() => onMouseEnter(theme.text, theme.body)}
+        onMouseLeave={() => onMouseLeave(theme.body, theme.text)}
+      >
+        <i className="fas fa-arrow-up" id="arrow" aria-hidden="true" />
+      </div>
+    </>
   );
 }
