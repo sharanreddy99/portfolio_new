@@ -193,8 +193,8 @@ const Language = ({ theme, data, repo_url }) => {
   }
 
   return (
-    <div className="pb-3">
-      Languages:{" "}
+    <div className="pb-3" style={{ color: theme.secondaryText }}>
+      <b>Languages:</b>
       {array.length
         ? array.map((language) => (
             <a
@@ -256,7 +256,7 @@ const CardFooter = ({ theme, star_count, repo_url, pushed_at }) => {
           </span>
         </span>
       </a>
-      <small className="text-muted" style={{ color: theme.secondaryText }}>
+      <small className="" style={{ color: theme.secondaryText }}>
         Updated {updated_at}
       </small>
     </p>
