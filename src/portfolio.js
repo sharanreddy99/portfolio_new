@@ -435,12 +435,26 @@ const experience = {
       work: true,
       experiences: [
         {
+          title: "Software Development Engineer in Test Intern",
+          company: "Croissant Inc.",
+          company_url: "https://www.croissant.com/",
+          logo_path: "croissant.jpeg",
+          duration: "June 2024 - Present",
+          location: "Nashville, TN",
+          description: [
+            "Architect and implement a comprehensive end-to-end automated testing framework for consumer-facing web applications utilizing Playwright, ensuring high coverage and robust performance validation.",
+            "Implement comprehensive end-to-end visual testing utilizing Playwright's snapshot comparison capabilities. Transition from Applitools to Playwright for enhanced visual regression testing fidelity and automation.",
+            "Redesign and refactor the monolithic AWS CloudFormation stack into modular, independent stacks, enhancing deployment efficiency, reducing complexity, and eliminating single points of failure in the infrastructure.",
+          ],
+          color: "#000000",
+        },
+        {
           title: "Software Engineer - II",
           company: "Sureify Labs",
           company_url: "https://www.sureify.com/",
           logo_path: "sureify.jpg",
           duration: "April 2022 - December 2022",
-          location: "",
+          location: "San Jose, CA",
           description: [
             "Engineered and deployed a Python script to facilitate seamless data transfer and environment synchronization across multiple stages, enhancing operational efficiency and data integrity of a system supporting 300k active users.",
             "Spearheaded development of a React web-app for an API wrapper microservice, employing drag-and-drop functionality to connect data mappings in a graph-like structure. Delivered a 60% reduction in configuration overhead.",
@@ -454,7 +468,7 @@ const experience = {
           company_url: "https://www.sureify.com/",
           logo_path: "sureify.jpg",
           duration: "December 2020 - March 2022",
-          location: "",
+          location: "San Jose, CA",
           description: [
             "Optimized SQL database queries for high-volume email transaction system, reducing cron job processing times by 40% and enhancing reliability for 150k  scheduled emails daily.",
             "Improved session validation procedures using JWT Tokens and Redis, cutting down response times by 45% without impacting backward compatibility for 100k+ users.",
