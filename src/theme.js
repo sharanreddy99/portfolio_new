@@ -306,4 +306,44 @@ export const blackAndRedTheme = {
   splashBg: "#FF0000",
 };
 
-export const chosenTheme = oceanDreamTheme;
+export const lightReddishTheme = {
+  body: "#FFE6E6",
+  text: "#660000",
+  expTxtColor: "#4D0000",
+  highlight: "#FF9999",
+  dark: "#330000",
+  secondaryText: "#994D4D",
+  imageHighlight: "#FF6666",
+  compImgHighlight: "#FFCCCC",
+  jacketColor: "#CC3333",
+  headerColor: "#FF666677",
+  splashBg: "#660000",
+};
+
+export const allThemes = {
+  blueTheme,
+  brownTheme,
+  purpleTheme,
+  greenTheme,
+  redTheme,
+  blackTheme,
+  pinkTheme,
+  violetTheme,
+  tealTheme,
+  orangeTheme,
+  yellowTheme,
+  materialDarkTheme,
+  materialLightTheme,
+  materialTealTheme,
+  oceanDreamTheme,
+  sunsetSerenityTheme,
+  mysticForestTheme,
+  midnightAura,
+  cosmicTwilight,
+  shadowedForest,
+  lightishRedTheme,
+  blackAndRedTheme,
+  lightReddishTheme,
+};
+
+export const chosenTheme = lightReddishTheme;

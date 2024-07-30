@@ -18,7 +18,7 @@ class CertificationCard extends Component {
               <div className="content-overlay"></div>
               <div
                 className="cert-header"
-                style={{ backgroundColor: certificate.color_code }}
+                style={{ backgroundColor: theme.headerColor }}
               >
                 <img
                   className="logo_img"
@@ -46,7 +46,11 @@ class CertificationCard extends Component {
             <ul className="lead-ul">
               {certificate.body &&
                 certificate.body.map((row) => {
-                  return <li className="lead-li">{row}</li>;
+                  return (
+                    <li className="lead-li" style={{ color: theme.text }}>
+                      {row}
+                    </li>
+                  );
                 })}
             </ul>
           </div>

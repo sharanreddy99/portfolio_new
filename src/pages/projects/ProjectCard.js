@@ -8,7 +8,7 @@ import CustomDangerousModal from "../../utils/CustomDangerousModal";
 import { projectCredentials } from "../../portfolio";
 import "./ProjectCard.css";
 
-const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
+const ProjectCard = ({ id, theme, value, hostedURL, deployURL }) => {
   const {
     name,
     description,
@@ -67,7 +67,7 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
 
   const CardButtons = () => {
     return (
-      <div className=" gap-2 d-block mt-2">
+      <div className="custombuttongroup">
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -105,8 +105,7 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
 
   return (
     // <Fade bottom duration={2000} distance="40px" style={{ display: "flex" }}>
-
-    <Col sm={12} md={12} lg={6}>
+    <span>
       <CustomDangerousModal
         title={showDangerousModal.title}
         body={showDangerousModal.body}
@@ -122,8 +121,14 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
         progressPeriod={59}
       />
       <Card
-        className="card shadow-lg p-3 mb-5 rounded"
-        style={{ background: "transparent" }}
+        className="card shadow-lg p-3 rounded"
+        style={{
+          background: "transparent",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}
       >
         <Card.Title as="h5">
           {(
@@ -133,15 +138,17 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
           ) || <Skeleton />}
         </Card.Title>
         <Card.Text>
-          <b
+          <span
+            key={name}
+            className="subTitle skills-text"
             style={{
-              height: "180px",
-              display: "block",
-              textAlign: "justify",
+              fontSize: "1rem",
+              color: theme.secondaryText,
+              fontWeight: "bold",
             }}
           >
             {!description ? "" : description || <Skeleton count={3} />}{" "}
-          </b>
+          </span>
         </Card.Text>
         {svn_url ? (
           <CardButtons
@@ -157,12 +164,13 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
 
         <hr />
         {languages_url ? (
-          <Language data={languages} repo_url={svn_url} />
+          <Language theme={theme} data={languages} repo_url={svn_url} />
         ) : (
           <Skeleton count={3} />
         )}
         {value ? (
           <CardFooter
+            theme={theme}
             star_count={stargazers_count}
             repo_url={svn_url}
             pushed_at={pushed_at}
@@ -171,12 +179,12 @@ const ProjectCard = ({ key, id, theme, value, hostedURL, deployURL }) => {
           <Skeleton />
         )}
       </Card>
-    </Col>
+    </span>
     // </Fade>
   );
 };
 
-const Language = ({ data, repo_url }) => {
+const Language = ({ theme, data, repo_url }) => {
   const array = [];
   let total_count = 0;
   for (let index in data) {
@@ -185,8 +193,8 @@ const Language = ({ data, repo_url }) => {
   }
 
   return (
-    <div className="pb-3">
-      Languages:{" "}
+    <div className="pb-3" style={{ color: theme.secondaryText }}>
+      <b>Languages:</b>
       {array.length
         ? array.map((language) => (
             <a
@@ -196,7 +204,7 @@ const Language = ({ data, repo_url }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="badge bg-light text-dark">
+              <span className="badge" style={{ color: theme.secondaryText }}>
                 {language}:{" "}
                 {Math.trunc((data[language] / total_count) * 1000) / 10} %
               </span>
@@ -207,7 +215,7 @@ const Language = ({ data, repo_url }) => {
   );
 };
 
-const CardFooter = ({ star_count, repo_url, pushed_at }) => {
+const CardFooter = ({ theme, star_count, repo_url, pushed_at }) => {
   const [updated_at, setUpdated_at] = useState("0 mints");
 
   const handleUpdatetime = useCallback(() => {
@@ -240,10 +248,17 @@ const CardFooter = ({ star_count, repo_url, pushed_at }) => {
         className="text-dark text-decoration-none"
       >
         <span className="text-dark card-link mr-4">
-          <span className="badge badge-dark">{star_count}</span>
+          <span
+            className="badge badge-dark"
+            style={{ color: theme.secondaryText }}
+          >
+            {star_count}
+          </span>
         </span>
       </a>
-      <small className="text-muted">Updated {updated_at}</small>
+      <small className="" style={{ color: theme.secondaryText }}>
+        Updated {updated_at}
+      </small>
     </p>
   );
 };

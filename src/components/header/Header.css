@@ -29,7 +29,7 @@
 .header li a:hover,
 .header .menu-btn:hover {
   /* background-color: #A6E1FA; */
-  background-color: #001529 !important;
+  /* background-color: #001529 !important; */
   color: white !important;
   border-radius: 20px;
 }

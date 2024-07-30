@@ -105,12 +105,27 @@ class ExperienceCard extends Component {
                   marginTop: 20,
                 }}
               >
-                <div className="repo-description" />
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: experience["description"],
-                  }}
-                ></div>
+                <ul style={{ padding: "15px", listStyleType: '" ⚡ "' }}>
+                  {experience["description"].map((row, index) => {
+                    return (
+                      <li
+                        key={
+                          experience["title"] + experience["company"] + index
+                        }
+                        className="subTitle skills-text"
+                        style={{
+                          margin: "15px 5px 0px 10px",
+                          fontSize: "1rem",
+                          color: theme.secondaryText,
+                          fontWeight: "bold",
+                          textAlign: "",
+                        }}
+                      >
+                        {row}
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </div>
           </div>
