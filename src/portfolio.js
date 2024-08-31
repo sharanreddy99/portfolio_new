@@ -435,6 +435,19 @@ const experience = {
       work: true,
       experiences: [
         {
+          title: "Software Engineer Intern",
+          company: "Tesla",
+          company_url: "https://www.tesla.com/",
+          logo_path: "tesla.jpg",
+          duration: "August 2024 - Present",
+          location: "Fremont, CA",
+          description: [
+            "Develop and maintain test automation frameworks and tools using Cypress and JavaScript, ensuring comprehensive test coverage.",
+            "Collaborate closely with Product and Development teams to design and execute functional, integration, and regression tests, as well as backend integration tests for RESTful APIs, enhancing overall software reliability and performance.",
+          ],
+          color: "#000000",
+        },
+        {
           title: "Software Development Engineer in Test Intern",
           company: "Croissant Inc.",
           company_url: "https://www.croissant.com/",
