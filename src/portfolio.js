@@ -456,8 +456,9 @@ const experience = {
           location: "Nashville, TN",
           description: [
             "Architect and implement a comprehensive end-to-end automated testing framework for consumer-facing web applications utilizing Playwright, ensuring high coverage and robust performance validation.",
-            "Implement comprehensive end-to-end visual testing utilizing Playwright's snapshot comparison capabilities. Transition from Applitools to Playwright for enhanced visual regression testing fidelity and automation.",
-            "Redesign and refactor the monolithic AWS CloudFormation stack into modular, independent stacks, enhancing deployment efficiency, reducing complexity, and eliminating single points of failure in the infrastructure.",
+            "Developed an intelligent S3-based solution using git diff and hashing for incremental push/pull of baseline images.",
+            "Created a multi-job GitHub Actions workflow to generate and deploy baseline images to S3, automating artifact approval via GitHub Issues.",
+            "Automated the bundling of Playwright-based live-site monitors using the Page Object Model for perfagents, ensuring consistency and modularity.",
           ],
           color: "#000000",
         },
