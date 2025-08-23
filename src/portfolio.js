@@ -24,7 +24,7 @@ const seo = {
 
 //Home Page
 const greeting = {
-  title: "Sharan Reddy Konda",
+  title: "Sharan Konda",
   logo_name: "Sharan Konda",
   nickname: "",
   subTitle:
@@ -427,7 +427,7 @@ const experience = {
   title: "Work Experience",
   subtitle: "",
   description:
-    "With close to two years of experience as a Software Engineer at Sureify Labs, I specialize in developing scalable and efficient solutions for real-world challenges. Passionate about enhancing operational efficiency and data integrity, I've engineered Python scripts, optimized SQL queries, and revamped microservices, consistently delivering significant reductions in overhead and response times.",
+    "Software Engineer with experience at Tesla, Croissant, and Sureify Labs, specializing in scalable applications, DevOps, and automation—passionate about building efficient solutions and always open to connecting.",
   header_image_path: "experience.svg",
   sections: [
     {
@@ -435,46 +435,65 @@ const experience = {
       work: true,
       experiences: [
         {
-          title: "Software Engineer Intern",
+          title: "Software Engineer",
           company: "Tesla",
           company_url: "https://www.tesla.com/",
           logo_path: "tesla.jpg",
-          duration: "August 2024 - Present",
+          duration: "February 2025 - Present",
           location: "Fremont, CA",
           description: [
-            "Develop and maintain test automation frameworks and tools using Cypress and JavaScript, ensuring comprehensive test coverage.",
-            "Collaborate closely with Product and Development teams to design and execute functional, integration, and regression tests, as well as backend integration tests for RESTful APIs, enhancing overall software reliability and performance.",
+            "Transformed the test agent from a CLI tool with multiple workflows into a React- and Python-based web application and containerized different services using Docker.",
+            "Enhanced functionality to generate test automation scripts directly from natural language-defined scenarios.",
+            "Streamlined schema generation by developing an MCP server integrated with Co-pilot, later extending to an MCP client connected to the web application’s chatbot.",
+            "Implemented test execution and report management capabilities served using NGINX.",
+            "Re-architecting the solution into a distributable package, transitioning from a monolithic repository to application-specific repos while syncing individual project data into a centralized mono-repo for unified scenario tracking.",
           ],
           color: "#000000",
         },
         {
-          title: "Software Development Engineer in Test Intern",
+          title: "Software Engineer Intern",
+          company: "Tesla",
+          company_url: "https://www.tesla.com/",
+          logo_path: "tesla.jpg",
+          duration: "August 2024 - December 2024",
+          location: "Fremont, CA",
+          description: [
+            "Designed and implemented a prototype automation framework utilizing Composite, Template Method, Strategy, and Command patterns to automatically generate comprehensive Page Object Models, establishing a standardized and reusable approach to UI automation.",
+            "Extended the framework to include an AI-powered module capable of generating Page Object Models and API objects with a single click, significantly reducing QA automation efforts.",
+            "Migrated automation infrastructure from legacy Windows-based VMs to GitHub Actions, fully decoupling projects from their execution environments and enabling scalable, containerized builds.",
+            "Developed configuration-driven GitHub Actions workflows with integrated notifications via email, Microsoft Power Automate, and Mattermost, delivering real-time execution summaries and artifact links to team channels.",
+            "Delivered a Proof of Concept for an AI agent that converts natural language scenarios into 100% executable test scripts, envisioning its evolution into a unified chatbot capable of integrating with 60+ internal Tesla applications.",
+          ],
+          color: "#000000",
+        },
+        {
+          title: "Software Development Engineer Intern",
           company: "Croissant Inc.",
           company_url: "https://www.croissant.com/",
           logo_path: "croissant.jpeg",
           duration: "June 2024 - August 2024",
           location: "Nashville, TN",
           description: [
-            "Architect and implement a comprehensive end-to-end automated testing framework for consumer-facing web applications utilizing Playwright, ensuring high coverage and robust performance validation.",
-            "Developed an intelligent S3-based solution using git diff and hashing for incremental push/pull of baseline images.",
+            "Developed an intelligent S3-based solution using git diff and file hashing for incremental push/pull of baseline images.",
             "Created a multi-job GitHub Actions workflow to generate and deploy baseline images to S3, automating artifact approval via GitHub Issues.",
-            "Automated the bundling of Playwright-based live-site monitors using the Page Object Model for perfagents, ensuring consistency and modularity.",
           ],
           color: "#000000",
         },
         {
-          title: "Software Engineer - II",
+          title: "Software Engineer",
           company: "Sureify Labs",
           company_url: "https://www.sureify.com/",
           logo_path: "sureify.jpg",
           duration: "June 2021 - December 2022",
           location: "Hyderabad, India",
           description: [
-            "Engineered a Python script for handling data mapping sync across environments, reducing development time by 95%.",
-            "Led React web-app development for an API service with drag-and-drop, connecting data mappings graphically, reducing configuration overhead by 60%.",
-            "Revamped API Wrapper Microservice to support async with Worker Pools, reducing response times by 75% for 850K requests.",
-            "Optimised SQL queries for email transactions, reducing cron job run times by 40% for 150k emails daily.",
-            "Improved session validation with SQL Indexing, JWT and Redis, cutting response times by 45% for 100k+ users.",
+            "Led delivery of a self-service insurance portal and a user engagement portal for a major U.S.-based insurance carrier.",
+            "Contributed to the API wrapper microservice that generates new APIs from database-stored data mapping configurations.",
+            "Engineered a Python script for handling data mapping sync across environments, reducing development time by 35%.",
+            "Led React web-app development for an API service with drag-and-drop, connecting data mappings graphically, reducing configuration overhead significantly.",
+            "Revamped API Wrapper Microservice to support async API Processing with Worker Pools, slashing down API response times.",
+            "Optimized SQL queries for email transactions, reducing cron job run times and potential timeouts.",
+            "Rearchitected the authentication and session validation mechanisms with JWT and Redis, improving API performance by 25%.",
           ],
           color: "#000000",
         },
@@ -501,7 +520,7 @@ const experience = {
 const projectsHeader = {
   title: "Projects and Dev Work",
   description:
-    "Created an exciting portfolio platform on AWS, powered by dynamic project deployment through Docker Compose. Seamlessly scalable, it adapts to user engagement, ensuring optimal resource usage and limitless project hosting with simple storage expansion. Integrated AWS services like S3, SNS, Route53, and Nginx guarantee unparalleled performance, fortified by IAM and CloudWatch for top-notch security and monitoring.",
+    "Built an agent that transforms natural language scenarios into executable automation scripts with page/API/schema objects, integrated with a chatbot interface for interactive test generation, and currently expanding into a unified, plug-and-play framework for 60+ internal applications.",
   avatar_image_path: "projects_image.svg",
 };
 
@@ -581,7 +600,7 @@ const contactPageData = {
     title: "Contact Me",
     profile_image_path: "profile.jpg",
     description:
-      "I have a strong enthusiasm for creating scalable and easily maintainable applications using the latest technologies. Currently, I am actively seeking opportunities in the fields of Software Development and DevOps. If you are aware of any open positions, have inquiries, or simply want to connect and say hello, please don't hesitate to get in touch with me!",
+      "I am passionate about building scalable, maintainable, and high-impact applications across Software Development, DevOps, with hands-on experience in cloud platforms (AWS, Azure), modern frameworks (React, Node.js, Python, Golang), and distributed system design. I’ve had the opportunity to contribute at Tesla, Croissant, and Sureify Labs, delivering solutions that improved scalability, streamlined workflows, and accelerated automation. I enjoy connecting with professionals, sharing knowledge, and exploring ideas—so please feel free to connect with me!",
   },
 };
 

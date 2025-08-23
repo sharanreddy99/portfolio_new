@@ -83,7 +83,7 @@ const Header = ({ theme }) => {
                 Certifications
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 to="/opensource"
                 tag={Link}
@@ -94,7 +94,7 @@ const Header = ({ theme }) => {
               >
                 Open Source
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 to="/contact"
